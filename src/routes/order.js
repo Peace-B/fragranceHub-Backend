@@ -9,6 +9,6 @@ router.put("/status/:orderId", orderStatus)
 router.get("/all", getAllOrders)
 router.get("/:orderId", getOderById)
 router.delete("/delete/:orderId", deleteOrder)
-router.get("/search/term", searchOrderByDate)
+router.post("/search", searchOrderByDate)
 
 export default router;

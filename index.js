@@ -5,7 +5,9 @@ import router from "./src/routes/auth.js"
 import categoryRouter from "./src/routes/category.js"
 import userRouter from "./src/routes/user.js"
 import productRouter from "./src/routes/product.js"
-import orderRouter from './src/routes/order.js';
+import orderRouter from './src/routes/order.js'
+import ratingRouter from "./src/routes/rating.js"
+import cors from "cors"
 
 
 
@@ -14,6 +16,7 @@ dotenv.config();
 //initialise express server
 const app = express()
 app.use(express.json())
+app.use(cors(["http://localhost:5173", "http://localhost:5173"]))
 
 const port = process.env.PORT
 const dbUrl = process.env.MONGODB_URL
@@ -35,6 +38,7 @@ app.use("/api/category", categoryRouter)
 app.use("/api/user", userRouter)
 app.use("/api/product", productRouter)
 app.use("/api/order", orderRouter)
+app.use("/api", ratingRouter)
 
 
 app.listen(port, (req, res) => {

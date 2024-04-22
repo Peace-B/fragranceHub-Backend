@@ -51,6 +51,14 @@ const productSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    ratings: [{
+      type: ObjectId,
+      ref: 'Rating'
+    }],
+    avgRating: {
+      type: Number,
+      default: 0,
+    }
 
   },
   { timestamps: true }

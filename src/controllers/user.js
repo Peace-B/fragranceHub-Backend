@@ -1,6 +1,5 @@
 import User from "../models/user.js";
 import { cloudinary } from "../helpers/cloudinary.config.js";
-// import bcrypt from "../helpers/bcrypt.config.js"
  
   
 export const getAllUsers = async(req, res)=>{
